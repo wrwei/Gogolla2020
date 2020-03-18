@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="/svnindex.xsl"?>
+<!DOCTYPE svn [
+  <!ELEMENT svn   (index)>
+  <!ATTLIST svn   version CDATA #REQUIRED
+                  href    CDATA #REQUIRED>
+  <!ELEMENT index (updir?, (file | dir)*)>
+  <!ATTLIST index name    CDATA #IMPLIED
+                  path    CDATA #IMPLIED
+                  rev     CDATA #IMPLIED
+                  base    CDATA #IMPLIED>
+  <!ELEMENT updir EMPTY>
+  <!ATTLIST updir href    CDATA #REQUIRED>
+  <!ELEMENT file  EMPTY>
+  <!ATTLIST file  name    CDATA #REQUIRED
+                  href    CDATA #REQUIRED>
+  <!ELEMENT dir   EMPTY>
+  <!ATTLIST dir   name    CDATA #REQUIRED
+                  href    CDATA #REQUIRED>
+]>
+<svn version="1.9.3 (r1718519)"
+     href="http://subversion.apache.org/">
+  <index name="Computer Science" rev="10174" path="/xm13-jdbc" base="sosym">
+    <updir href="../"/>
+    <file name=".project" href=".project" />
+    <dir name=".settings" href=".settings/" />
+    <file name=".texlipse" href=".texlipse" />
+    <file name="EolFormat.tex" href="EolFormat.tex" />
+    <file name="EvlFormat.tex" href="EvlFormat.tex" />
+    <file name="abstract.tex" href="abstract.tex" />
+    <file name="approach.tex" href="approach.tex" />
+    <file name="background.tex" href="background.tex" />
+    <file name="bibliography.bib" href="bibliography.bib" />
+    <file name="conclusions.tex" href="conclusions.tex" />
+    <dir name="images" href="images/" />
+    <file name="introduction.tex" href="introduction.tex" />
+    <file name="llncs.cls" href="llncs.cls" />
+    <dir name="presentation" href="presentation/" />
+    <dir name="tmp" href="tmp/" />
+    <file name="xm13-jdbc.aux" href="xm13-jdbc.aux" />
+    <file name="xm13-jdbc.bbl" href="xm13-jdbc.bbl" />
+    <file name="xm13-jdbc.blg" href="xm13-jdbc.blg" />
+    <file name="xm13-jdbc.pdf" href="xm13-jdbc.pdf" />
+    <file name="xm13-jdbc.synctex" href="xm13-jdbc.synctex" />
+    <file name="xm13-jdbc.tcp" href="xm13-jdbc.tcp" />
+    <file name="xm13-jdbc.tex" href="xm13-jdbc.tex" />
+    <file name="xm13-jdbc.tps" href="xm13-jdbc.tps" />
+  </index>
+</svn>

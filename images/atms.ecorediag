@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_LTs98O4UEeK7eMKnLwoemA" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_LZSBgO4UEeK7eMKnLwoemA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_LaeUUO4UEeK7eMKnLwoemA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_LaoFUO4UEeK7eMKnLwoemA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LaoFUe4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LaoFUu4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LaoFU-4UEeK7eMKnLwoemA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LapTcO4UEeK7eMKnLwoemA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LapTce4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LapTcu4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LapTc-4UEeK7eMKnLwoemA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_LZSBge4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atms.ecore#//Model"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LZSBgu4UEeK7eMKnLwoemA" x="84" y="240"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_LchiwO4UEeK7eMKnLwoemA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_LciJ0O4UEeK7eMKnLwoemA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_LciJ0e4UEeK7eMKnLwoemA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_LgSBYO4UEeK7eMKnLwoemA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atms.ecore#//Airport/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LgSocO4UEeK7eMKnLwoemA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LciJ0u4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LciJ0-4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LciJ1O4UEeK7eMKnLwoemA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Lciw4O4UEeK7eMKnLwoemA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Lciw4e4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Lciw4u4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Lciw4-4UEeK7eMKnLwoemA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Lchiwe4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atms.ecore#//Airport"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lchiwu4UEeK7eMKnLwoemA" x="243" y="180"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_LgSoce4UEeK7eMKnLwoemA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_LgTPgO4UEeK7eMKnLwoemA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_LgT2kO4UEeK7eMKnLwoemA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_LgUdoO4UEeK7eMKnLwoemA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atms.ecore#//Route/numberOfFlights"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LgUdoe4UEeK7eMKnLwoemA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LgT2ke4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LgT2ku4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LgT2k-4UEeK7eMKnLwoemA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LgT2lO4UEeK7eMKnLwoemA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LgT2le4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LgT2lu4UEeK7eMKnLwoemA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LgT2l-4UEeK7eMKnLwoemA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_LgSocu4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atms.ecore#//Route"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LgSoc-4UEeK7eMKnLwoemA" x="72" y="60"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_LTs98e4UEeK7eMKnLwoemA"/>
+  <element xmi:type="ecore:EPackage" href="atms.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_Lg66kO4UEeK7eMKnLwoemA" type="3002" source="_LZSBgO4UEeK7eMKnLwoemA" target="_LchiwO4UEeK7eMKnLwoemA">
+    <children xmi:type="notation:Node" xmi:id="_Lg8vwO4UEeK7eMKnLwoemA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Lg8vwe4UEeK7eMKnLwoemA" x="-31" y="12"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LhI9AO4UEeK7eMKnLwoemA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhI9Ae4UEeK7eMKnLwoemA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Lg66ke4UEeK7eMKnLwoemA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Lg66ku4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atms.ecore#//Model/airports"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lg66k-4UEeK7eMKnLwoemA" points="[0, 0, -212, 40]$[0, -40, -212, 0]$[109, -40, -103, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ME1f8O4UEeK7eMKnLwoemA" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ME2HAO4UEeK7eMKnLwoemA" id="(0.9019607843137255,0.42857142857142855)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_LhUjMO4UEeK7eMKnLwoemA" type="3002" source="_LchiwO4UEeK7eMKnLwoemA" target="_LgSoce4UEeK7eMKnLwoemA">
+    <children xmi:type="notation:Node" xmi:id="_LhUjNO4UEeK7eMKnLwoemA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhUjNe4UEeK7eMKnLwoemA" x="8" y="-34"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LhVKQO4UEeK7eMKnLwoemA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhVKQe4UEeK7eMKnLwoemA" x="8" y="21"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_LhUjMe4UEeK7eMKnLwoemA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LhUjMu4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atms.ecore#//Airport/outgoing"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LhUjM-4UEeK7eMKnLwoemA" points="[-57, 0, 93, 73]$[-156, 0, -6, 73]$[-156, -73, -6, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8BjrQPHREeKEWtzbRRmwMA" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8BjrQfHREeKEWtzbRRmwMA" id="(0.49645390070921985,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_LhVKQu4UEeK7eMKnLwoemA" type="3002" source="_LchiwO4UEeK7eMKnLwoemA" target="_LgSoce4UEeK7eMKnLwoemA">
+    <children xmi:type="notation:Node" xmi:id="_LhVxUO4UEeK7eMKnLwoemA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhVxUe4UEeK7eMKnLwoemA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LhVxUu4UEeK7eMKnLwoemA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhVxU-4UEeK7eMKnLwoemA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_LhVKQ-4UEeK7eMKnLwoemA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LhVKRO4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atms.ecore#//Airport/incoming"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LhVKRe4UEeK7eMKnLwoemA" points="[0, 0, 82, 95]$[0, -95, 82, 0]$[-70, -95, 12, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Z0aQPHREeKEWtzbRRmwMA" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Z0aQfHREeKEWtzbRRmwMA" id="(0.9290780141843972,0.5510204081632653)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_LhVxVO4UEeK7eMKnLwoemA" type="3002" source="_LgSoce4UEeK7eMKnLwoemA" target="_LchiwO4UEeK7eMKnLwoemA">
+    <children xmi:type="notation:Node" xmi:id="_LhWYYO4UEeK7eMKnLwoemA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhWYYe4UEeK7eMKnLwoemA" x="-29" y="-16"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LhWYYu4UEeK7eMKnLwoemA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhWYY-4UEeK7eMKnLwoemA" x="12" y="-16"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_LhVxVe4UEeK7eMKnLwoemA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LhVxVu4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atms.ecore#//Route/origin"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LhVxV-4UEeK7eMKnLwoemA" points="[-6, 0, -156, -73]$[-6, 73, -156, 0]$[93, 73, -57, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ME044O4UEeK7eMKnLwoemA" id="(0.49645390070921985,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ME044e4UEeK7eMKnLwoemA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_LhXmgO4UEeK7eMKnLwoemA" type="3002" source="_LgSoce4UEeK7eMKnLwoemA" target="_LchiwO4UEeK7eMKnLwoemA">
+    <children xmi:type="notation:Node" xmi:id="_LhXmhO4UEeK7eMKnLwoemA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhXmhe4UEeK7eMKnLwoemA" x="12" y="-45"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LhYNkO4UEeK7eMKnLwoemA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LhYNke4UEeK7eMKnLwoemA" x="12" y="14"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_LhXmge4UEeK7eMKnLwoemA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LhXmgu4UEeK7eMKnLwoemA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atms.ecore#//Route/destination"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LhXmg-4UEeK7eMKnLwoemA" points="[12, 0, -70, -95]$[82, 0, 0, -95]$[82, 95, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MEzqwe4UEeK7eMKnLwoemA" id="(0.9290780141843972,0.5510204081632653)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ME0R0O4UEeK7eMKnLwoemA" id="(0.5,0.0)"/>
+  </edges>
+</notation:Diagram>

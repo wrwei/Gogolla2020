@@ -1,0 +1,19 @@
+@namespace(uri="atms", prefix="")
+package atms;
+
+class Model {
+	val Airport[*] airports;
+}
+
+class Airport {
+	attr String name;
+	val Route[*]#origin outgoing;
+	ref Route[*]#destination incoming;
+}
+
+class Route {
+	attr int numberOfFlights;
+	ref Airport#outgoing origin;
+	ref Airport#incoming destination;
+}
+

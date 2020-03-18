@@ -1,0 +1,83 @@
+\documentclass[runningheads,a4paper]{llncs} 
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx} 
+\usepackage{verbatim}
+\usepackage{listings,multicol}
+\usepackage{textcomp}
+\usepackage{courier}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[T1]{fontenc}
+\usepackage{shortvrb}
+
+\input{EolFormat}
+\input{EvlFormat}
+
+\renewcommand\dblfloatpagefraction{.99}
+\renewcommand\dbltopfraction{.99}
+\renewcommand\floatpagefraction{.99}
+\renewcommand\topfraction{.99}
+\renewcommand\bottomfraction{.99}
+\renewcommand\textfraction{.01}
+%\addtolength{\belowcaptionskip}{-8mm}
+%\addtolength{\abovecaptionskip}{-5mm}
+%\setlength{\intextsep}{1mm}
+
+\lstset{ 
+  upquote=true,
+	captionpos=b,
+	breaklines=true,
+	xleftmargin=0pt,
+	basicstyle=\ttfamily\scriptsize,
+	flexiblecolumns=true,
+	%numbers=left,
+	nolol=true,
+	tabsize=2,
+	escapechar=\$
+  showstringspaces=false,
+} 
+
+\usepackage{url}
+ \newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+ 
+%Bridging the Symmetry of \\Ignorance in DSL Design 
+\newcommand{\TheTitle}{An Approach for Efficient Querying of Large Relational Datasets with OCL-based Languages}
+
+% first the title is needed
+\title{\TheTitle}
+ 
+\titlerunning{Querying Relational Datasets with OCL-based Languages}
+
+\author{Dimitrios S. Kolovos \and Ran Wei \and Konstantinos Barmpis}
+%
+\authorrunning{D. Kolovos et. al.}
+
+\institute{Department of Computer Science, University of York, \\Deramore Lane, York, YO10 5GH, UK \\
+\{dimitris.kolovos, ran.wei, konstantinos.barmpis\}@york.ac.uk
+}
+
+\toctitle{Lecture Notes in Computer Science}
+\tocauthor{Authors' Instructions}
+\maketitle
+
+\input{abstract}
+%\keywords{Metamodelling, Domain, Modelling, MDE}
+
+\input{introduction}
+\input{approach}
+\input{background}
+\input{conclusions}
+\section*{Acknowledgements}
+
+This research was part supported by the EPSRC, through the Large-Scale Complex IT Systems project (EP/F001096/1) and by the EU, through the Automated Measurement and Analysis of Open Source Software (OSSMETER) FP7 STREP project (318736).
+
+\bibliographystyle{unsrt}
+\bibliography{reference}  
+\end{document}
