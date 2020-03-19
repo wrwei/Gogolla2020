@@ -1,9 +1,0 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Querying Large Relational Datasets: Challenges and Solutions}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Finding the number of airports in the network}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Finding adjunct airports}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Runtime SQL Query Generation}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Related Work}{}% 6
-\BOOKMARK [1][-]{section.4}{Conclusions and Further Work}{}% 7
-\BOOKMARK [1][-]{section*.5}{Bibliography}{}% 8
-\BOOKMARK [1][-]{section*.7}{About the authors}{}% 9
