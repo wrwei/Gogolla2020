@@ -5,22 +5,36 @@ The Epsilon Object Language \cite{EOL} is an OCL-based imperative model query an
 
 To experiment with querying relational datasets with EOL, we selected a large real-world publicly-available dataset from the US Bureau of Transportation Statistics\footnote{\url{http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time}} that records all domestic flights in the US in January 2013. The dataset consists of one table (Flight) with 223 columns and 506,312 rows and is 221MB when persisted in MySQL. Each row of the table records the details of a domestic flight during that month, including the short codes of its origin and destination airports, the flight's departure and arrival time etc. An excerpt of the Flight table appears in Figure \ref{fig:database}. 
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.8\textwidth]{images/database.pdf}
+	\caption{Excerpt of the Flight table.}
+	\label{fig:database}
+\end{figure}
+
 Our aim in this running example is to transform this dataset into an EMF model that conforms to the metamodel of Figure \ref{fig:atms} and which captures the incoming and outgoing routes for each airport as well as the volume of traffic on these routes, so that we can then further process the EMF model to discover interesting facts about the structure of the US airport network.
 
 \begin{figure}[ht]
-\centering
-\begin{minipage}[b]{0.47\linewidth}
-\includegraphics[width=2.3in]{images/database.pdf}
-\caption{Excerpt of the Flight table}
-\label{fig:database}
-\end{minipage}
-\quad
-\begin{minipage}[b]{0.47\linewidth}
-\includegraphics[width=2.3in]{images/atms.pdf}
-\caption{Simple ATM System Metamodel}
-\label{fig:atms}
-\end{minipage}
+	\centering
+	\includegraphics[width=.8\textwidth]{images/atms.pdf}
+	\caption{Simple ATM System Metamodel.}
+	\label{fig:atms}
 \end{figure}
+
+%\begin{figure}[ht]
+%\centering
+%\begin{minipage}[b]{0.47\linewidth}
+%\includegraphics[width=2.3in]{images/database.pdf}
+%\caption{Excerpt of the Flight table}
+%\label{fig:database}
+%\end{minipage}
+%\quad
+%\begin{minipage}[b]{0.47\linewidth}
+%\includegraphics[width=2.3in]{images/atms.pdf}
+%\caption{Simple ATM System Metamodel}
+%\label{fig:atms}
+%\end{minipage}
+%\end{figure}
 
 %\begin{figure}
 % \centering
