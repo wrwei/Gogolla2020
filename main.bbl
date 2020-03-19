@@ -1,0 +1,63 @@
+\begin{thebibliography}{{Dim}12}
+
+\bibitem[BB07]{Berrabah2007}
+D.~Berrabah and F.~Boufares.
+\newblock Constraints checking in uml class diagrams: Sql vs ocl.
+\newblock In Roland Wagner, Norman Revell, and Ganther Pernul, editors, {\em
+  Database and Expert Systems Applications}, volume 4653 of {\em Lecture Notes
+  in Computer Science}, pages 593--602. Springer Berlin Heidelberg, 2007.
+\newblock URL: \url{http://dx.doi.org/10.1007/978-3-540-74469-6_58}, \href
+  {https://doi.org/10.1007/978-3-540-74469-6_58}
+  {\path{doi:10.1007/978-3-540-74469-6_58}}.
+
+\bibitem[DHL01]{Demuth2001}
+Birgit Demuth, Heinrich Hussmann, and Sten Loecher.
+\newblock Ocl as a specification language for business rules in database
+  applications.
+\newblock In {\em Proc. 4th International Conference on The Unified Modeling
+  Language, Modeling Languages, Concepts, and Tools}, UML '01, pages 104--117,
+  London, UK, UK, 2001. Springer-Verlag.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=647245.719455}.
+
+\bibitem[{Dim}06]{EOL}
+{Dimitrios S. Kolovos, Richard F.Paige and Fiona A.C. Polack}.
+\newblock {The Epsilon Object Language}.
+\newblock In {\em {Proc. European Conference in Model Driven Architecture
+  (EC-MDA) 2006}}, volume {4066} of {\em {LNCS}}, pages {128--142}, {Bilbao,
+  Spain}, {July} {2006}.
+
+\bibitem[{Dim}12]{EpsilonXML}
+{Dimitrios S. Kolovos, Louis M. Rose, Nicholas Matragkas, James Williams,
+  Richard F. Paige}.
+\newblock {A Lightweight Approach for Managing XML Documents with MDE
+  Languages}.
+\newblock In {\em {Proc. 8th European Conference on Modeling Foundations and
+  Applications}}, {Copenhagen, Denmark}, {July} {2012}.
+
+\bibitem[{Hei}07]{Heidenreich2007}
+{Heidenreich, F. and Wende, C. and Demuth, B.}
+\newblock {A Framework for Generating Query Language Code from OCL Invariants}.
+\newblock {\em {Electronic Communication of the European Association of
+  Software Science and Technology}}, {9}, {2007}.
+
+\bibitem[{Mar}13]{EpsilonSpreadsheets}
+{Martins Francis, Dimitrios S. Kolovos, Nicholas Matragkas, Richard F. Paige}.
+\newblock {Adding Spreadsheets to the MDE Toolbox}.
+\newblock In {\em {Proc. ACM/IEEE 16th International Conference on Model Driven
+  Engineering Languages and Systems (MoDELS)}}, {Miami, USA}, {October} {2013}.
+
+\bibitem[{Ric}09]{EpsilonICECCS}
+{Richard F. Paige, Dimitrios S. Kolovos, Louis M. Rose, Nicholas Drivalos,
+  Fiona A.C. Polack}.
+\newblock {The Design of a Conceptual Framework and Technical Infrastructure
+  for Model Management Language Engineering}.
+\newblock In {\em {Proc. 14th IEEE International Conference on Engineering of
+  Complex Computer Systems}}, {Potsdam, Germany}, {2009}.
+
+\bibitem[{U. }09]{Marder2009}
+{U. Marder, N. Ritter, H.-P. Steiert}.
+\newblock {A DBMS-based Approach for Automatic Checking of OCL Constraints}.
+\newblock In {\em {Proc. "Rigourous Modeling and Analysis with the UML:
+  Challenges and Limitations, OOPSLA workshop}}, {2009}.
+
+\end{thebibliography}

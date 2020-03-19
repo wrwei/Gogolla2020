@@ -1,16 +1,31 @@
-\documentclass[runningheads,a4paper]{llncs} 
+\documentclass{jot} 
 
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx} 
 \usepackage{verbatim}
-\usepackage{listings,multicol}
+\usepackage{listings}
+\usepackage{multicol}
 \usepackage{textcomp}
 \usepackage{courier}
 \usepackage{wrapfig}
 \usepackage{longtable}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{shortvrb}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{tabularx,booktabs}
+\usepackage{xspace}
+%\usepackage{textcomp}
+%\usepackage{listings}
+% \usepackage{graphicx}
+%\graphicspath{{./figures/}}
+
 
 \input{EolFormat}
 \input{EvlFormat}
@@ -25,59 +40,97 @@
 %\addtolength{\abovecaptionskip}{-5mm}
 %\setlength{\intextsep}{1mm}
 
-\lstset{ 
-  upquote=true,
-	captionpos=b,
-	breaklines=true,
-	xleftmargin=0pt,
-	basicstyle=\ttfamily\scriptsize,
-	flexiblecolumns=true,
-	%numbers=left,
-	nolol=true,
-	tabsize=2,
-	escapechar=\$
-  showstringspaces=false,
-} 
+\newcommand\parambegin{\rmfamily\textlangle\itshape}
+\newcommand\paramend{\upshape\textrangle}
+\newcommand\parameter[1]{{\parambegin#1\paramend}}
+\newcommand\code[1]{\texttt{#1}}
+\let\file\code
+\newcommand\jotcls{\file{jot.cls}\xspace}
+\newcommand\JOT{\caps{JOT}\xspace}
 
-\usepackage{url}
- \newcommand{\keywords}[1]{\par\addvspace\baselineskip
-\noindent\keywordname\enspace\ignorespaces#1}
 
-\begin{document}
+\lstset{
+	language=[LaTeX]TeX,
+	escapeinside={_}{_},
+	escapebegin={\rmfamily\textlangle\itshape},
+	escapeend={\upshape\textrangle},
+	gobble=4
+}
+\lstMakeShortInline[ % typeset sequences |like this| as code
+escapeinside={_}{_},
+escapebegin=\parambegin,
+escapeend=\paramend
+]|
 
-\mainmatter  % start of an individual contribution
- 
-%Bridging the Symmetry of \\Ignorance in DSL Design 
-\newcommand{\TheTitle}{An Approach for Efficient Querying of Large Relational Datasets with OCL-based Languages}
-
-% first the title is needed
-\title{\TheTitle}
- 
-\titlerunning{Querying Relational Datasets with OCL-based Languages}
-
-\author{Dimitrios S. Kolovos \and Ran Wei \and Konstantinos Barmpis}
 %
-\authorrunning{D. Kolovos et. al.}
+%\lstset{ 
+%  upquote=true,
+%	captionpos=b,
+%	breaklines=true,
+%	xleftmargin=0pt,
+%	basicstyle=\ttfamily\scriptsize,
+%	flexiblecolumns=true,
+%	%numbers=left,
+%	nolol=true,
+%	tabsize=2,
+%	escapechar=\$
+%  showstringspaces=false,
+%} 
 
-\institute{Department of Computer Science, University of York, \\Deramore Lane, York, YO10 5GH, UK \\
-\{dimitris.kolovos, ran.wei, konstantinos.barmpis\}@york.ac.uk
+
+%\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+%\noindent\keywordname\enspace\ignorespaces#1}
+
+\title{An Approach for Efficient Querying of Large Relational Datasets with OCL-based Languages}
+\runningtitle{Efficient Querying of Relational Dataset with OCL-Based Languages}
+
+\author[affiliation=dlut]
+{Ran Wei}
+{   is an associate professor at the Dalian University of Technology, China.
+	Contact him at \email{r.wei@live.co.uk}.}
+
+\author[affiliation=uoy]
+{Konstantinos Barmpis}
+{   is a researcher of the Department of Computer Science at the University of York, United Kingdom. 
+	Contact him at \email{konstantinos.barmpis@york.ac.uk}.}
+
+\author[affiliation=uoy]
+{Dimitrios Kolovos}
+{   is a professor of the Department of Computer Science at the University of York, United Kingdom.
+	Contact him at \email{dimitris.kolovos@york.ac.uk}.}
+
+\affiliation{dlut}{Dalian University of Technology, China\\ \url{http://www.dlut.edu.cn}}
+\affiliation{uoy}{University of York, United Kingdom\\ \url{http://www.york.ac.uk}}
+
+\runningauthor{R. Wei, K. Barmpis and D. Kolovos.}
+\jotdetails{
+	volume=0,
+	articleno=0,
+	year=2010,
 }
 
-\toctitle{Lecture Notes in Computer Science}
-\tocauthor{Authors' Instructions}
+
+\begin{document}
+\input{abstract}
 \maketitle
 
-\input{abstract}
+
 %\keywords{Metamodelling, Domain, Modelling, MDE}
 
 \input{introduction}
 \input{approach}
 \input{background}
 \input{conclusions}
-\section*{Acknowledgements}
 
-This research was part supported by the EPSRC, through the Large-Scale Complex IT Systems project (EP/F001096/1) and by the EU, through the Automated Measurement and Analysis of Open Source Software (OSSMETER) FP7 STREP project (318736).
+\backmatter
 
-\bibliographystyle{unsrt}
-\bibliography{reference}  
+\nocite{*}
+\bibliographystyle{alphaurl}
+\bibliography{reference}
+\abouttheauthors
+
+\begin{acknowledgments}
+	This research was part supported by the EPSRC, through the Large-Scale Complex IT Systems project (EP/F001096/1) and by the EU, through the Automated Measurement and Analysis of Open Source Software (OSSMETER) FP7 STREP project (318736).
+\end{acknowledgments}
+
 \end{document}

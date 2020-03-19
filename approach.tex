@@ -151,16 +151,15 @@ operation airportForName(name : String) {
 To achieve an acceptable level of performance, we have extended the EOL execution engine to use streamed \emph{lazy collections} and a runtime OCL to SQL query translation strategy for certain types of OCL expressions when the latter are evaluated against relational datasets. Each lazy collection acts as a wrapper for an SQL query generated at runtime and only starts streaming data from the database if/when it needs to be iterated. This prevents unnecessary database queries and enables multi-step query translation at runtime. An example of the query translation process is illustrated in Figure \ref{fig:query} which calculates the average delay of flights flying from JFK to LAX on Sundays. In particular, the following OCL expressions are rewritten as SQL queries.
 
 \begin{description}
+	\item \textbf{.allInstances} Retrieving all the rows of a table in the database returns a streamed lazy collection (\emph{ResultSetList}) that is backed by a \emph{select * from <table>} SQL expression. For example, \emph{Flight.allInstances} is translated to \emph{select * from Flight}.
+	
+	\item \textbf{.select(<iterator>\textbar<condition>)} \emph{ResultSetList} overrides the built-in OCL select operation, translates the EOL condition to an SQL expression, and returns a new \emph{ResultSetList} constrained by the latter. 
+	For example, \emph{Flight. allInstances.select(f \textbar f.origin = "JFK" and f.dayOfWeek=1)} is translated into \emph{select * from Flight where origin = ? and dayOfWeek = ?} (the values of the parameters -- i.e. JFK and 1 -- are kept separately and are only used if the query needs to be executed). The condition can contain references to the columns of the table, arithmetic, and logical operators at arbitrary levels of nesting. The \emph{exists()}, \emph{forAll()} and \emph{reject()} OCL operations behave similarly.
+	\item\textbf{.collect(<iterator>\textbar<expression>)} \emph{ResultSetList} overrides the built-in OCL collect() operation to return a streamed lazy collection of primitive values (\emph{PrimitiveValuesList}). For example, \emph{Flight.all.collect(f \textbar f.dest + "-" + f.origin)} is translated to \emph{select origin + "-" + dest from Flight}. In the spirit of OCL, retrieving properties of collections is a short-hand notation for collect(). For example, \emph{Flight.allInstances.dest} is shorthand for \emph{Flight.allInstances. collect(f \textbar f.dest)}.
+	
+	\item \textbf{.size()} Calls to the size() method of a \emph{ResultSetList}/\emph{PrimitiveValuesList} are interpreted as \emph{count} SQL queries. For example \emph{Flight.allInstances.size()} is translated to \emph{select count(*) from Flight}.
 
-\item\textbf{.allInstances} Retrieving all the rows of a table in the database returns a streamed lazy collection (\emph{ResultSetList}) that is backed by a \emph{select * from <table>} SQL expression. For example, \emph{Flight.allInstances} is translated to \emph{select * from Flight}.
-
-\item\textbf{.select(<iterator>|<condition>)} \emph{ResultSetList} overrides the built-in OCL select operation, translates the EOL condition to an SQL expression, and returns a new \emph{ResultSetList} constrained by the latter. For example, \emph{Flight. allInstances.select(f|f.origin = "JFK" and f.dayOfWeek=1)} is translated into \emph{select * from Flight where origin = ? and dayOfWeek = ?} (the values of the parameters -- i.e. JFK and 1 -- are kept separately and are only used if the query needs to be executed). The condition can contain references to the columns of the table, arithmetic, and logical operators at arbitrary levels of nesting. The \emph{exists()}, \emph{forAll()} and \emph{reject()} OCL operations behave similarly.
-
-\item\textbf{.collect(<iterator>|<expression>)} \emph{ResultSetList} overrides the built-in OCL collect() operation to return a streamed lazy collection of primitive values (\emph{PrimitiveValuesList}). For example, \emph{Flight.all.collect(f|f.dest + "-" + f.origin)} is translated to \emph{select origin + "-" + dest from Flight}. In the spirit of OCL, retrieving properties of collections is a short-hand notation for collect(). For example, \emph{Flight.allInstances.dest} is shorthand for \emph{Flight.allInstances. collect(f|f.dest)}.
-
-\item\textbf{.size()} Calls to the size() method of a \emph{ResultSetList}/\emph{PrimitiveValuesList} are interpreted as \emph{count} SQL queries. For example \emph{Flight.allInstances.size()} is translated to \emph{select count(*) from Flight}.
-
-\item\textbf{asSet()} Calls to asSet() method of a \emph{PrimitiveValuesList} return a new \emph{PrimitiveValuesList} backed by a \emph{distinct} SQL query. For example, \emph{Flight.allInstances. dest.asSet()} returns a new \emph{PrimitiveValuesList} backed by the following SQL query: \emph{select distinct(dest) from Flight}. 
+	\item\textbf{asSet()} Calls to asSet() method of a \emph{PrimitiveValuesList} return a new \emph{PrimitiveValuesList} backed by a \emph{distinct} SQL query. For example, \emph{Flight.allInstances. dest.asSet()} returns a new \emph{PrimitiveValuesList} backed by the following SQL query: \emph{select distinct(dest) from Flight}. 
 
 \end{description}
 
@@ -173,6 +172,8 @@ To achieve an acceptable level of performance, we have extended the EOL executio
 
 Streamed lazy collections also provide a \emph{fetch()} method that executes their underpinning query and returns a complete in-memory result-set which is navigable in both directions. This is useful for small result-sets where the overhead of maintaining the entire result-set is memory is preferable to the performance overhead of streaming. To address the limitation of one streamed result-set per connection, we are using a pool of connections for streamed result-sets: each streamed result-set requests a connection from the pool when it needs to be computed and returns it back to the pool when it has been fully iterated.
 
+
+%/////////////////////////////////////////////////////////
 %\begin{itemize}
 %  \item Evaluating an \emph{.allInstances} expression on a type X originating from a relational dataset (e.g. \emph{DB!Flight.allInstances}) returns a streamed lazy collection (\emph{ResultSetList}) that is backed by a \emph{select * from X} SQL query, which is not executed until the collection starts being iterated;
 %  \item Evaluating a \emph{.size()} expression on a streamed\emph{ResultSetList} executes an SQL count query (i.e. \emph{select count(*) from X}) instead of iterating through the contents of the list;
