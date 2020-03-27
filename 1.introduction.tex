@@ -1,0 +1,16 @@
+\section{Introduction}
+
+Model Driven Engineering (MDE) focuses on elevating machine-processable models to first-class artefacts of the software development process, such that model management programs can be created to increase the degree of automation. 
+%MDE has received considerable attention due to its demonstrated benefits of improved productivity, quality and maintainability~\cite{}.
+MDE is technology-agnostic in the sense that it does not prescribe a specific architecture or framework atop which models should be captured, or a particular format in which they should be stored.
+Information that can potentially be of interest in the context of a MDE process is often located with non-model artefacts such as XML documents, spreadsheets and relational databases. 
+As such, model management language and tools woudl arguably benefit from extending their scope beyond the narrow boundaries of 3-level metamodelling architectures such as EMF and MOF for MDE.
+
+In previous work, we have demonstrated how Object Constraint Language (OCL) based model management (e.g. model validation, model-to-text and model-to-model transformation) languages of the Epsilon platform \cite{EpsilonICECCS} can be used to interact with plain XML documents~\cite{EpsilonXML} and spreadsheets~\cite{EpsilonSpreadsheets}. 
+In this work we investigate challenges involved in using such languages to query large datasets stored in relational database management systems and extract abstract models that can be then used (e.g. analysed, validated, transformed) in the context of MDE processes.
+In particular, we identify the challenges imposed by the size of such datasets and the conceptual gap between the organisation of relational databases and the object-oriented syntax of OCL-based languages, and we propose some solutions.
+
+The rest of the paper is organised as follows. 
+In Section \ref{sec:background} we provide the background and the motivation of this work.
+In Section \ref{sec:approach} we present a running example that involves querying a real-world large relational dataset and extracting an EMF model from it using an OCL-based imperative transformation language, we identify the performance challenges involved in doing so, and propose a run-time query translation approach that addresses some of these challenges. 
+In Section \ref{sec:related}, we review previous work on using OCL to query relational datasets and compare our approach to it, and in Section \ref{sec:conclusions} we conclude the paper and provide directions for further work.

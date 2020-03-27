@@ -1,0 +1,25 @@
+\section{Background and Motivation}
+\label{sec:background}
+MDE elevates models to first-class artefacts of the software development process, and proposes the use of automated model management (code generation, model transformation, etc) to enhance both the productivity of developers and the quality of the produced artefacts. 
+While MDE is conceptually not restricted to a particular type of models, over the last decade, approaches to MDE have converged on the automated management of models adhering to 3-layer metamodelling architectures, and most notably on models captured using the facilities provided by the Eclipse Modelling Framework \cite{EMF}.
+
+The majority of contemporary model management languages -- including languages such as Acceleo, ATL, Kermeta, QVT and OCL - provide built-in support for EMF-based models. 
+Using EMF as a de-facto modelling framework has reduced diversity and improved interoperability between MDE tools.
+However, for MDE tools to appeal to a wider audience of developers, it is necessary for them to provide support for other types of structured artefacts that developers commonly use, such that 1) readily available formats can be used by developers without mastering MDE skills to benefit from MDE and 2) legacy data can be imported in the context of MDE development processes, further improving the efficiency of developers.
+
+In our previous works, we have demonstrated that how OCL-based model management (e.g. model validation, model-to-text and model-to-model transformation) languages of the Epsilon platform can be used to interact with plain-XML models \cite{EpsilonXML} and spreadsheets~\cite{EpsilonSpreadsheets}. 
+Following this engineering pattern, in this paper we focus on providing support for querying large datasets stored in Relational Database Management Systems (RDBMSs) in MDE processes.
+
+RDBMSs are arguably the most used systems for storing and managing datasets in the world of software.
+In practical MDE processes, engineers may be interested in obtaining subsets of data stored in RDBMSs in order to extract models that can be further used (e.g. analysed, validated, transformed) in the context of MDE processes.
+However, in order to do this, a number of challenges need to be addressed. 
+First, RDBMSs typically require the usage of querying languages (e.g. SQL) to obtain data. 
+In order to query RDMBs using OCL-based languages, it is necessary to bridge the syntax gap between OCL-based languages and RDMBS query languages.
+Secondly, for very large datasets, the execution of OCL-based language on RDBMS should be sufficiently optimised in order to obtain acceptable performance.
+In this paper, we aim to investigate these challenges in detail and propose our solution.
+
+%
+%
+%Relational database management systems are arguably the most 
+%Information that can potentially be of interest in the context of a Model Driven Engineering (MDE) process is often located within non-model artefacts such as spreadsheets, XML documents and relational databases. 
+%As such, model management languages and tools would  arguably benefit from extending their scope beyond the narrow boundaries of 3-level metamodelling architectures such as EMF and MOF for MDE.

@@ -1,13 +1,39 @@
 \section{Querying Large Relational Datasets: Challenges and Solutions}
 \label{sec:approach}
+In this section, we discuss the approach we take for querying RDBMSs with OCL-based language. 
+We provide a simple case study to illustrate the challenges we encounter in querying RDBMSs with the Epsilon platform and we discuss our solution to the identified challenges.
 
-The Epsilon Object Language \cite{EOL} is an OCL-based imperative model query and transformation language. EOL is the core language of the Epsilon platform and underpins a number of task-specific languages for model management tasks including model validation, model-to-model and model-to-text transformation. As such, by adding support for querying relational datasets to EOL, this capability is automatically propagated to all task-specific languages of the platform. While the discussion in the rest of the paper focuses on EOL, in principle the discussion and solutions proposed are also relevant to a wide range of OCL-based model management languages such as QVTo, ATL and Kermeta.
-
-To experiment with querying relational datasets with EOL, we selected a large real-world publicly-available dataset from the US Bureau of Transportation Statistics\footnote{\url{http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time}} that records all domestic flights in the US in January 2013. The dataset consists of one table (Flight) with 223 columns and 506,312 rows and is 221MB when persisted in MySQL. Each row of the table records the details of a domestic flight during that month, including the short codes of its origin and destination airports, the flight's departure and arrival time etc. An excerpt of the Flight table appears in Figure \ref{fig:database}. 
+\subsection{Epsilon}
+We propose our approach in querying relational database using the Epsilon~\cite{EpsilonICECCS} platform.
+Epsilon is a mature and well-established family of interoperable languages for model management. 
+Languages in Epsilon can be used to manage models of diverse metamodels and technologies. 
+Figure~\ref{fig:epsilon} shows the architecture of Epsilon.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.8\textwidth]{images/database.pdf}
+	\includegraphics[width=1\textwidth]{images/epsilon-architecture.pdf}
+	\caption{Overview of the architecture of Epsilon.}
+	\label{fig:epsilon}
+\end{figure}
+
+At the core of Epsilon is the Epsilon Object Language (EOL) \cite{EOL}, EOL is an OCL-based imperative language that provides features such as model modification, multiple model access, conventional programming constructs (variables, loops, branches, etc.), user interaction, profiling and support for transactions.
+Although EOL can be used as a general-purpose model management language, its primary aim is to be used in task-specific languages.
+Thus, a number of task-specific languages have been implemented atop EOL, including those for model transformation (ETL), model comparison (ECL), model merging (EML), model validation (EVL), model refactoring (EWL) and model-to-text transformation (EGL). 
+As such, by adding support for querying relational datasets to EOL, this capability is automatically propagated to all task-specific languages of the platform. 
+
+With regard to the types of model supported, Epsilon provides the Epsilon Model Connectivity (EMC) layer that offers a uniform interface for interacting with models of different modelling technologies (through modelling technology specific EMC drivers).
+Currently, EMC drivers have been implemented to support EMF \cite{EMF} (XMI 2.x), MDR \cite{MDR} (XMI 1.x) and Z \cite{UzingZ} specifications in LaTeX using CZT \cite{CZT} Also, to enable users to compose complex workflows that involve a number of individual model management tasks, Epsilon provides ANT \cite{ANT} tasks and an inter-task communication framework discussed in detail in \cite{EpsilonWorkflow}.
+In our approach, we have defined EMC drivers for MySQL and PostgreSQL databases using Java Database Connectivity (JDBC).
+
+While the discussion in the rest of the paper focuses on EOL, in principle the discussion and solutions proposed are also relevant to a wide range of OCL-based model management languages such as QVTo, ATL and Kermeta.
+
+\subsection{Experiment I: Querying US Flight Data}
+To experiment with querying relational datasets with EOL, we selected a large real-world publicly-available dataset from the US Bureau of Transportation Statistics\footnote{\url{http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time}} that records all domestic flights in the US in January 2013. 
+The dataset consists of one table (Flight) with 223 columns and 506,312 rows and is 221MB when persisted in MySQL. Each row of the table records the details of a domestic flight during that month, including the short codes of its origin and destination airports, the flight's departure and arrival time etc. An excerpt of the Flight table appears in Figure \ref{fig:database}. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/database.pdf}
 	\caption{Excerpt of the Flight table.}
 	\label{fig:database}
 \end{figure}
@@ -20,21 +46,6 @@ Our aim in this running example is to transform this dataset into an EMF model t
 	\caption{Simple ATM System Metamodel.}
 	\label{fig:atms}
 \end{figure}
-
-%\begin{figure}[ht]
-%\centering
-%\begin{minipage}[b]{0.47\linewidth}
-%\includegraphics[width=2.3in]{images/database.pdf}
-%\caption{Excerpt of the Flight table}
-%\label{fig:database}
-%\end{minipage}
-%\quad
-%\begin{minipage}[b]{0.47\linewidth}
-%\includegraphics[width=2.3in]{images/atms.pdf}
-%\caption{Simple ATM System Metamodel}
-%\label{fig:atms}
-%\end{minipage}
-%\end{figure}
 
 %\begin{figure}
 % \centering
@@ -50,9 +61,9 @@ Our aim in this running example is to transform this dataset into an EMF model t
 %	\label{fig:atms}
 %\end{figure}
 
-\subsection{Finding the number of airports in the network}
+\subsubsection{Finding the number of airports in the network}
 
-A reasonable OCL-like expression\footnote{EOL does away with the ocl- prefixes (e.g. oclAsSet()) and the $\rightarrow$ OCL operator and uses . instead for all property/method calls.} that can be used to retrieve the number of all distinct airports\footnote{We assume that there are no airports with only incoming or outgoing flights and as such, looking into one of \emph{origin}, \emph{dest} should suffice.} in the Flight table would be:
+A reasonable OCL-like expression\footnote{EOL does away with the ocl-prefixes (e.g. oclAsSet()) and the $\rightarrow$ OCL operator and uses. instead for all property/method calls.} that can be used to retrieve the number of all distinct airports\footnote{We assume that there are no airports with only incoming or outgoing flights and as such, looking into one of \emph{origin}, \emph{dest} should suffice.} in the Flight table would be:
 
 \begin{lstlisting}
 Flight.allInstances.origin.asSet().size()
@@ -101,7 +112,7 @@ The following observations can be made for the program above:
   \item Iterating through all the rows of the Flight table in the \emph{select(\ldots)} method in lines 5-7 is inefficient, particularly as the same result can be computed using the following SQL statement \emph{select count(*) from Flight where origin=? and destination=?} (where \emph{?} should be replaced every time with the appropriate origin/destination values).
 \end{itemize}
 
-\subsection{Runtime SQL Query Generation}
+\subsubsection{Runtime SQL Query Generation}
 
 %By now, readers should be convinced that querying relational datasets using OCL-like languages is a really bad idea in terms of performance, and that SQL is a more natural and performant language to query such data. 
 
@@ -185,6 +196,8 @@ To achieve an acceptable level of performance, we have extended the EOL executio
 \end{figure}
 
 Streamed lazy collections also provide a \emph{fetch()} method that executes their underpinning query and returns a complete in-memory result-set which is navigable in both directions. This is useful for small result-sets where the overhead of maintaining the entire result-set is memory is preferable to the performance overhead of streaming. To address the limitation of one streamed result-set per connection, we are using a pool of connections for streamed result-sets: each streamed result-set requests a connection from the pool when it needs to be computed and returns it back to the pool when it has been fully iterated.
+
+\subsection{Experiment II:}
 
 
 %/////////////////////////////////////////////////////////
